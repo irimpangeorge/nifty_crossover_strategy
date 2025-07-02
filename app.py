@@ -26,7 +26,7 @@ security_id = 1594
 
 # Fetch market data
 def fetch_data():
-    df = yf.download('^NSEI', period="1d", interval="15m", group_by="column")
+    df = yf.download('^NSEI', period="5d", interval="15m", group_by="column")
     df.columns = ['Close', 'High', 'Low', 'Open', 'Volume']
     df.index = df.index.tz_convert("Asia/Kolkata")
     df.dropna(inplace=True)
